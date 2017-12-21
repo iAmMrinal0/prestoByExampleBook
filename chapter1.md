@@ -46,7 +46,7 @@ appFlow = do
   pure unit
 ```
 
-Add the respective imports for `runUI` from Presto and for `MainScreen` and `MainScreenInit` 
+Add the respective imports for `runUI` from Presto and for `MainScreen` and `MainScreenInit`
 
 One final step is to modify our handler function in `index.html` so we can match our screen name which is `MainScreen`
 
@@ -64,5 +64,5 @@ function handleScreenTag(state) {
 }
 ```
 
-
+Run `pulp build --to index.js` and open `index.html` in your browser to view our initial layout.
 
