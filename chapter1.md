@@ -5,6 +5,7 @@ The initial boilerplate code for the project is available at [GitHub](https://gi
 ```
 $ npm install
 $ bower install
+$ pulp build --to index.js
 ```
 
 
