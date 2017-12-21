@@ -1,3 +1,13 @@
-# My Awesome Book
+# Presto by Example
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+This book is a follow along guide for writing a basic Todo application in PureScript using the [PureScript Presto](https://github.com/juspay/purescript-presto) framework. 
+
+
+
+## Prerequisites
+
+1. JavaScript
+2. A bit of PureScript
+
+
+
