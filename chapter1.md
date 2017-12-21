@@ -14,9 +14,9 @@ At this point, if you open the `index.html` file in your browser you will not se
 
 ## Getting the Initial layout on the screen
 
-The code for this section is available on [GitHub](https://github.com/iAmMrinal0/prestoByExample/releases/tag/v0.2). 
+The code for this section is available on [GitHub](https://github.com/iAmMrinal0/prestoByExample/releases/tag/v0.2).
 
-We imagine our screen and it's actions\(events\) as a set of types. What this means is that, we get to control our application and also make our app less error prone with the help of types. This also gives us a bit of assurance that we are restricted by the types we define. To explain this in detail, we will start by defining our types for our screen in `src/Types.purs`
+We imagine our screen and its actions\(events\) as a set of types. What this means is that, we get to control our application and also make our app less error prone with the help of types. This also gives us a bit of assurance that we are restricted by the types we define. To explain this in detail, we will start by defining our types for our screen in `src/Types.purs`
 
 ```
 -- | This is our screen which takes a state
