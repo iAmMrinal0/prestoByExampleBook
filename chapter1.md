@@ -39,7 +39,7 @@ For our types, we need to derive a few instances. What are these instances, and 
 
 Now that we have defined our types, we need to trigger the screen so that we could view our initial layout. Presto provides a method called `runUI` which takes a screen name i.e. a type which corresponds to a screen. So we will proceed to use that to trigger the screen. To do that we need to edit `appFlow` in `src/Main.purs` as that's the start of our app which currently does not do anything.
 
-```
+```haskell
 appFlow :: Flow Unit
 appFlow = do
   _ <- runUI (MainScreen MainScreenInit)
