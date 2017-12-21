@@ -1,3 +1,11 @@
-# First Chapter
+# Project Setup
 
-GitBook allows you to organize your book into chapters, each chapter is stored in a separate file like this one.
+The initial boilerplate code for the project is available at [GitHub](https://github.com/iAmMrinal0/prestoByExample/releases/tag/v0.1) and to get started with the setup, run the following commands in your terminal:
+
+```
+$ npm install
+$ bower install
+```
+
+
+
