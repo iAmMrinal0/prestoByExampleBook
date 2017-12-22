@@ -66,5 +66,5 @@ function addToList(todoItem) {
 }
 ```
 
-As always, build our app using `pulp build --to index.js`. Time to open our `index.html` and view our app in action.
+As always, build our app using `pulp build --to index.js`. Time to open our `index.html` and view our app in action. If you followed with me, you will notice that there's an issue with the app\(Hint: Try adding more than one item\) We will fix this in our next section.
 
