@@ -6,13 +6,13 @@ Our goal in this chapter is to trigger an action and log the content from the in
 
 So let's begin with our types. We defined a type `MainScreenAction` in the previous section, which currently has dummy actions. We will now modify our action for our goal.
 
-```
+```haskell
 data MainScreenAction = MainScreenAddTodo String | MainScreenAbortAction
 ```
 
 We renamed `MainScreenAction` to `MainScreenAddTodo` which now has an argument of type `String` That's it for our types. Time to handle our action, so open up `src/Main.purs` and notice the following code block:
 
-```
+```haskell
 appFlow :: Flow Unit
 appFlow = do
   _ <- runUI (MainScreen MainScreenInit)
@@ -21,7 +21,7 @@ appFlow = do
 
 Currently, we are discarding the action received by using `_ <- runUI (MainScreen MainScreenInit)` which we will now handle.
 
-```
+```haskell
 appFlow :: Flow Unit
 appFlow = do
   action <- runUI (MainScreen MainScreenInit)
@@ -37,7 +37,7 @@ We are using a method `logAny` which we have not defined yet. Let's define it as
 
 In our `src/Runner.js` we define our `logAny` which is just a function that does `console.log`
 
-```
+```js
 exports.logAny = function(data) {
   console.log(data)
 }
