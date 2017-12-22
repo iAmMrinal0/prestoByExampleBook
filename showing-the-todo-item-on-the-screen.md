@@ -1,0 +1,30 @@
+## Showing the Todo item on the screen
+
+The code for this section is available on [GitHub](https://github.com/iAmMrinal0/prestoByExample/releases/tag/v0.4)
+
+In the previous section we triggered an action and passed data from our screen to our app logic which we will call Flow from now. In this section we are going to display the content on the screen i.e. pass the data we received from the action and send it back to the screen.
+
+And just like always, our first step is to figure types. To load our initial screen our state was of the following type
+
+```
+data MainScreenState = MainScreenInit | MainScreenAbort
+```
+
+Now we are going to pass a different state to our screen so we need to extend our `MainScreenState` type
+
+```
+data MainScreenState = MainScreenInit | MainScreenAbort | MainScreenAddToList String
+```
+
+We have extended our state type to accept a new state with a `String` argument.
+
+It's time to fix our `addTodoFlow` to pass our data back to the screen with the new state.
+
+```
+addTodoFlow todoItem = do
+  _ <- runUI (MainScreen (MainScreenAddToList todoItem))
+  pure unit
+```
+
+Here we are using `runUI` again to run the `MainScreen` but now with a different state which is `MainScreenAddToList` with the data we received from our `MainScreenTodoAction`
+
