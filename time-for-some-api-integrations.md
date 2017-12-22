@@ -75,7 +75,7 @@ Now that we have our successful response we destructure it and extract the `resp
 
 Add the required imports from [`src/Main.purs`](https://github.com/iAmMrinal0/prestoByExample/blob/2b45b00eff8662c9b1763e044113ad071ce7a94c/src/Main.purs) And now time to handle the our id on our screen. So modify `addToList` function in `index.html`
 
-```
+```js
 function deleteHandler(value) {
   var divList = document.getElementById("todoValues")
   var divToRemove = document.getElementById(value)
