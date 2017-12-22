@@ -49,11 +49,51 @@ We will not be going into details about the instances. The advanced section will
 
 Before we proceed further, we will have to fix our existing type for `MainScreenAddToList` because now with the todo item we will be passing our unique ID too. So let's fix it.
 
-```
+```haskell
 data MainScreenState
   = MainScreenInit
   | MainScreenAbort
   | MainScreenAddToList String String
+```
+
+Let's modify our `addTodoFlow` to make the API call and send the response with the unique ID to the screen.
+
+```
+addTodoFlow :: String -> Flow Unit
+addTodoFlow todoItem = do
+  response <- callAPI (Headers []) API.TodoReq
+  case response of
+    Left err -> pure unit
+    Right (API.TodoRes {response: id}) -> do
+      action <- runUI (MainScreen (MainScreenAddToList todoItem id))
+      handleMainScreenAction action
+```
+
+Here we are using a method called `callAPI` which takes the required headers and the request body. As we don't have any headers to pass we just pass `Headers []` and similarly as it's a `GET` request we don't have a request body so we use our request type i.e. `TodoReq` . Once we get the response there's a possibility that our API call failed for some reason and that's what we do a `case` match on. Right now we will concentrate on our successful response that is in the `Right` .
+
+Now that we have our successful response we destructure it and extract the `response` key which holds our response and pass it to the screen with our existing screen state `MainScreenAddToList`
+
+Add the required imports from [`src/Main.purs`](https://github.com/iAmMrinal0/prestoByExample/blob/2b45b00eff8662c9b1763e044113ad071ce7a94c/src/Main.purs) And now time to handle the our id on our screen. So modify `addToList` function in `index.html`
+
+```
+function deleteHandler(value) {
+  var divList = document.getElementById("todoValues")
+  var divToRemove = document.getElementById(value)
+  divList.removeChild(divToRemove)
+}
+function addToList(todoItem) {
+  var div = document.createElement("div")
+  div.id = "todoId" + todoItem[1]
+  var p = document.createElement("p")
+  p.innerHTML = todoItem[0]
+  var button = document.createElement("button")
+  button.innerHTML = "Delete"
+  button.onclick = () => deleteHandler(div.id)
+  div.appendChild(p)
+  div.appendChild(button)
+  var divList = document.getElementById("todoValues")
+  divList.appendChild(div)
+}
 ```
 
 
