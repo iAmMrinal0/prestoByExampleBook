@@ -28,3 +28,41 @@ addTodoFlow todoItem = do
 
 Here we are using `runUI` again to run the `MainScreen` but now with a different state which is `MainScreenAddToList` with the data we received from our `MainScreenTodoAction`
 
+Now all there's left is to handle the state in our screen in `index.html`
+
+```
+function handleScreenTag(state) {
+  switch(state.screen) {
+    case "MainScreen":
+      switch(state.contents.tag) {
+        case "MainScreenInit":
+          init();
+          break;
+        case "MainScreenAddToList":
+          addToList(state.contents.contents);
+          break;
+      }
+      break;
+  }
+}
+```
+
+We add a new case to handle `MainScreenAddToList` as that's the name of our state and we add a new `div` in our initial layout so that we can add our items to it. Also we add the function `addToList` which adds our content to the DOM.
+
+    function init() {
+      document.body.innerHTML = `    <div id="todoInput">
+        <input type="text" id="todoItem"/>
+        <button onclick="addTodo()">Add Todo</button>
+      </div>
+      <div id="todoValues">
+      </div>`
+    }
+    function addToList(todoItem) {
+      var p = document.createElement("p")
+      p.innerHTML = todoItem
+      var div = document.getElementById("todoValues")
+      div.appendChild(p)
+    }
+
+
+
