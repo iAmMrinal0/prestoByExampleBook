@@ -1,17 +1,3 @@
-# Project Setup
-
-The initial boilerplate code for the project is available at [GitHub](https://github.com/iAmMrinal0/prestoByExample/releases/tag/v0.1) and to get started with the setup, run the following commands in your terminal:
-
-```
-$ npm install
-$ bower install
-$ pulp build --to index.js
-```
-
-The final command compiles our PureScript code and writes it to `index.js`
-
-At this point, if you open the `index.html` file in your browser you will not see any output. This is what we will build up by first starting with getting an initial layout on the screen.
-
 ## Getting the Initial layout on the screen
 
 The code for this section is available on [GitHub](https://github.com/iAmMrinal0/prestoByExample/releases/tag/v0.2).
@@ -35,7 +21,7 @@ If you look at the above code, we have defined here 3 types:
 * `MainScreenState` : The state which the current screen can be in
 * `MainScreenAction` : The possible actions\(events\) the screen could emit.
 
-For our types, we need to derive a few instances. What are these instances, and why will be explained in the Advanced section. Hence, for now you could follow the instance definitions from [`src/Types.purs`](https://github.com/iAmMrinal0/prestoByExample/blob/797053c17593878773abc06a2753cdd2fa20ef3c/src/Types.purs) on GitHub.
+For our types, we need to derive a few instances. What are these instances will be explained in the Advanced section. Hence, for now you could follow the instance definitions from [`src/Types.purs`](https://github.com/iAmMrinal0/prestoByExample/blob/797053c17593878773abc06a2753cdd2fa20ef3c/src/Types.purs) on GitHub.
 
 Now that we have defined our types, we need to trigger the screen so that we could view our initial layout. Presto provides a method called `runUI` which takes a screen name i.e. a type which corresponds to a screen. So we will proceed to use that to trigger the screen. To do that we need to edit `appFlow` in `src/Main.purs` as that's the start of our app which currently does not do anything.
 
