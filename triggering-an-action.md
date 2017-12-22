@@ -43,5 +43,32 @@ exports.logAny = function(data) {
 }
 ```
 
+Now we add a type definition for our foreign function in `src/Runner.purs`
 
+```
+foreign import logAny :: forall a. a -> Unit
+```
+
+We have our PureScript code ready. Now we need to modify our `index.html` to trigger an action from our button
+
+```js
+function init() {
+  document.body.innerHTML = `    <div id="todoInput">
+    <input type="text" id="todoItem"/>
+    <button>Add Todo</button>
+    <button onclick="addTodo()">Add Todo</button>
+    </div>`
+   }
+function addTodo() {
+  var inputData = document.getElementById('todoItem').value
+  var event = {tag: "MainScreenAddTodo", contents:inputData}
+  window.callBack(JSON.stringify(event))()
+}
+```
+
+Notice that our action name\(tag\) is same as the type we defined `MainScreenAddTodo` and the type `String` is the value which we send in `contents`
+
+And we are done with the code. Let's build the PureScript code using `pulp build --to index.js` and open `index.html`
+
+Have the console of your browser open on the side and enter something in the input box and click the button. You should see the result in your console.
 
