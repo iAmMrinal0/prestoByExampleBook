@@ -1,6 +1,6 @@
 ## Showing the Todo item on the screen
 
-The code for this section is available on [GitHub](https://github.com/iAmMrinal0/prestoByExample/releases/tag/v0.4)
+The code for this section is available on [GitHub](https://github.com/iAmMrinal0/prestoByExample/releases/tag/v0.4).
 
 In the previous section we triggered an action and passed data from our screen to our app logic which we will call Flow from now. In this section we are going to display the content on the screen i.e. pass the data we received from the action and send it back to the screen.
 

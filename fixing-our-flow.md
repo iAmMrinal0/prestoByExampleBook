@@ -1,6 +1,6 @@
 ## Fixing our Flow
 
-The code for this section is available on [GitHub](https://github.com/iAmMrinal0/prestoByExample/releases/tag/v0.5)
+The code for this section is available on [GitHub](https://github.com/iAmMrinal0/prestoByExample/releases/tag/v0.5).
 
 If you have been following along you might have noticed that we can't seem to add items after the first time. The reason for this is that once we encounter the `MainScreenAddTodo` action we are going to our next Flow which is `addTodoFlow` where we are not listening\(handling\) any actions from our screen. This is the code we have currently:
 

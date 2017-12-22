@@ -5,4 +5,5 @@
 * [Triggering an Action](triggering-an-action.md)
 * [Showing the Todo item on the screen](showing-the-todo-item-on-the-screen.md)
 * [Fixing our Flow](fixing-our-flow.md)
+* [Time for some API integrations](time-for-some-api-integrations.md)
 
