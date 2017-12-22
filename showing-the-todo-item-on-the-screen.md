@@ -64,5 +64,5 @@ We add a new case to handle `MainScreenAddToList` as that's the name of our stat
       div.appendChild(p)
     }
 
-
+As always, build our app using `pulp build --to index.js`. Time to open our `index.html` and view our app in action.
 
