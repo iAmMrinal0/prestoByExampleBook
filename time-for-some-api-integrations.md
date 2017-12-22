@@ -13,7 +13,7 @@ $ npm run server
 
 Now that our server is running, we get back to our PureScript code and can you guess what we are going to start with? If you are not sure, then the answer is types. We start by defining our request and response types which helps us in restricting possibilities of errors. The following is our `src/Remote.purs` where we define our request and response types.
 
-```
+```haskell
 module Remote where
 
 import Data.Foreign.Class (class Decode, class Encode)
