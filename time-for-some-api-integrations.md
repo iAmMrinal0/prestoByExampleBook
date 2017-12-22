@@ -47,5 +47,14 @@ We will not be going into details about the instances. The advanced section will
 * `GET` : our HTTP request method
 * `http://localhost:3000` : our request URL
 
+Before we proceed further, we will have to fix our existing type for `MainScreenAddToList` because now with the todo item we will be passing our unique ID too. So let's fix it.
+
+```
+data MainScreenState
+  = MainScreenInit
+  | MainScreenAbort
+  | MainScreenAddToList String String
+```
+
 
 
