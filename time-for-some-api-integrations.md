@@ -11,5 +11,41 @@ $ npm install
 $ npm run server
 ```
 
-Our server is running, so we get back to our PureScript code and can you guess what we are going to start with? If you are not sure, then the answer is types.
+Now that our server is running, we get back to our PureScript code and can you guess what we are going to start with? If you are not sure, then the answer is types. We start by defining our request and response types which helps us in restricting possibilities of errors. The following is our `src/Remote.purs` where we define our request and response types.
+
+```
+module Remote where
+
+import Data.Foreign.Class (class Decode, class Encode)
+import Data.Generic.Rep (class Generic)
+import Presto.Core.Types.API (class RestEndpoint, Method(GET), defaultDecodeResponse, defaultMakeRequest_)
+import Presto.Core.Utils.Encoding (defaultDecode, defaultEncode)
+
+data TodoReq = TodoReq
+newtype TodoRes = TodoRes
+  { code :: Int
+  , status :: String
+  , response :: String
+  }
+
+instance makeTodoReq :: RestEndpoint TodoReq TodoRes where
+  makeRequest _ headers = defaultMakeRequest_ GET "http://localhost:3000" headers
+  decodeResponse body = defaultDecodeResponse body
+
+derive instance genericTodoReq :: Generic TodoReq _
+instance encodeTodoReq :: Encode TodoReq where encode = defaultEncode
+
+derive instance genericTodoRes :: Generic TodoRes _
+instance decodeTodoRes :: Decode TodoRes where decode = defaultDecode
+```
+
+We will not be going into details about the instances. The advanced section will explain that but we will try to make sense of the code above.
+
+* `TodoReq` : request type
+* `TodoRes` : response type \(our actual response will be in the `response` key\)
+* `defaultMakeRequest_` : Method to use for `GET` requests
+* `GET` : our HTTP request method
+* `http://localhost:3000` : our request URL
+
+
 
