@@ -96,5 +96,7 @@ function addToList(todoItem) {
 }
 ```
 
+Build our app in a new terminal, also make sure the server is running and then open `index.html`
 
+Now we have unique ID's for our todo items. In the next section we will change our logic to save our todo items on the server.
 
