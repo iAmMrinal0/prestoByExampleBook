@@ -83,5 +83,5 @@ function addToList(todoItem) {
 }
 ```
 
-
+Time to run our server and build our PureScript code and open `index.html` to see our changes in action.
 
