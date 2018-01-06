@@ -116,3 +116,5 @@ button.onclick = () => deleteTodoHandler(todoItem.id)
 
 Run the server and build the PureScript code and open `index.html` and try to add, delete todo items and reload the page to see the items loaded on page load.
 
+That's it for the app. If you wish to look at how update todo is implemented, you can check it out on [GitHub](https://github.com/iAmMrinal0/prestoByExample/releases/tag/v0.9).
+
